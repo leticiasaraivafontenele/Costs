@@ -1,23 +1,23 @@
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './components/pages/Home.js'
+import Projects from './components/pages/Projects.js'
 import Company from './components/pages/Company.js'
 import Contact from './components/pages/Contact.js'
 import NewProject from './components/pages/NewProject.js'
 import Container from './components/layout/Container.js'
+import Navbar from './components/layout/Navbar.js'
+import Footer from './components/layout/Footer.js'
 
 
 function App() {
   return (
     <Router>
-      <div>
-        <Link to='/'>Home</Link>
-        <Link to="/contact">Contato</Link>
-        <Link to="/company">Empresa</Link>
-        <Link to="/newproject">Novo Projeto</Link>
-      </div>
+      <Navbar/>
       <Container customClass="minheight">
         <Routes>
           <Route exact path='/' element={<Home/>}>
+          </Route>
+          <Route exact path='/projects' element={<Projects/>}>
           </Route>
           <Route exact path='/company' element={<Company/>}>
           </Route>
@@ -27,7 +27,7 @@ function App() {
           </Route>
         </Routes>
       </Container>
-      <footer>Footer</footer>
+      <Footer/>
     </Router>
   );
 }

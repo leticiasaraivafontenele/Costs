@@ -1,9 +1,9 @@
 import style from "./Container.module.css"
 
-function Container(props){
+function Container({children, customClass}){
     return(
-        <div className={`${style.container} ${style[props.customClass]}`}>
-        {props.children}
+        <div className={`${style.container} ${style[customClass]}`}>
+        {children}
         </div>
     )
 }
